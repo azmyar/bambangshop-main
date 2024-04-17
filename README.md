@@ -65,11 +65,11 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   [x] Commit: `Implement unsubscribe function in Notification controller.`
     -   [x] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
 -   **STAGE 3: Implement notification mechanism**
-    -   [ ] Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
-    -   [ ] Commit: `Implement notify function in Notification service to notify each Subscriber.`
-    -   [ ] Commit: `Implement publish function in Program service and Program controller.`
-    -   [ ] Commit: `Edit Product service methods to call notify after create/delete.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-3" questions in this README.
+    -   [x] Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
+    -   [x] Commit: `Implement notify function in Notification service to notify each Subscriber.`
+    -   [x] Commit: `Implement publish function in Program service and Program controller.`
+    -   [x] Commit: `Edit Product service methods to call notify after create/delete.`
+    -   [x] Write answers of your learning module's "Reflection Publisher-3" questions in this README.
 
 ## Your Reflections
 This is the place for you to write reflections:
@@ -93,3 +93,9 @@ This is the place for you to write reflections:
 3. Postman is an invaluable tool in software development. I often use Postman to send HTTP requests to the server that has been created, ensuring that the responses are as expected. Additionally, Postman offers the feature of generating API documentation, which is very useful. I believe this feature will greatly assist in our group project, allowing us to create API documentation in a more structured and organized manner.
 
 #### Reflection Publisher-3
+
+1. In this situation, we are implementing the Observer Pattern using the Push model. This is evident from the behavior of the publisher actively sending notifications to each observer through the NotificationService::notify function. This function calls the update() method for each subscriber (observer) that has subscribed to a specific type of product.
+
+2. In this context, if we were to use the Observer Pattern with the Pull model, the advantages would include increased flexibility for observers to fetch data from the publisher. The publisher retains full control over when and how data is received, potentially reducing the load on the publisher as observers only fetch data when needed. However, this approach also has disadvantages, where the received information is not real-time. This may undermine the primary goal of providing notifications, which is to increase product awareness, as notifications may be delayed if subscribers are not actively making requests.
+
+3. If we decide not to use multi-threading in the notification process, then notifications will be sent sequentially on a single thread of the program. This means that the overall program will run slower, resulting in delays in notification delivery, especially if there are many notifications that need to be sent concurrently. These delays are caused by the fact that the notification process must wait until other notifications are processed before it can proceed.
