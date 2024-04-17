@@ -58,12 +58,12 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   [x] Commit: `Implement delete function in Subscriber repository.`
     -   [x] Write answers of your learning module's "Reflection Publisher-1" questions in this README.
 -   **STAGE 2: Implement services and controllers**
-    -   [ ] Commit: `Create Notification service struct skeleton.`
-    -   [ ] Commit: `Implement subscribe function in Notification service.`
-    -   [ ] Commit: `Implement subscribe function in Notification controller.`
-    -   [ ] Commit: `Implement unsubscribe function in Notification service.`
-    -   [ ] Commit: `Implement unsubscribe function in Notification controller.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
+    -   [x] Commit: `Create Notification service struct skeleton.`
+    -   [x] Commit: `Implement subscribe function in Notification service.`
+    -   [x] Commit: `Implement subscribe function in Notification controller.`
+    -   [x] Commit: `Implement unsubscribe function in Notification service.`
+    -   [x] Commit: `Implement unsubscribe function in Notification controller.`
+    -   [x] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
 -   **STAGE 3: Implement notification mechanism**
     -   [ ] Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
     -   [ ] Commit: `Implement notify function in Notification service to notify each Subscriber.`
@@ -85,5 +85,11 @@ This is the place for you to write reflections:
 3. In this context, using DashMap allows operations on the static variable SUBSCRIBERS to be safely performed by multiple threads concurrently. Conversely, while the Singleton Pattern is useful, it doesn't guarantee thread safety, especially in concurrent situations. Therefore, opting for DashMap in this case provides a more secure option for thread safety.
 
 #### Reflection Publisher-2
+
+1. Separating "Service" and "Repository" from the model is an application of the Separation of Concerns principle in software design. This aligns with the Single Responsibility Principle (SRP), which states that a module should focus on a single function. In this context, the "Service" is responsible for business logic operations, while the "Repository" is responsible for data access operations. Through this separation, non-functional requirements can be improved in accordance with the principles of Good Design.
+
+2. If only the Model is used, it would encompass methods covering both business logic and data access operations. As a result, direct interactions between models would occur, possibly requiring additional methods in the model to support these interactions. As the program evolves, the model would become too bloated or overly large. This would increase code complexity and reduce modularity and ease of maintenance.
+
+3. Postman is an invaluable tool in software development. I often use Postman to send HTTP requests to the server that has been created, ensuring that the responses are as expected. Additionally, Postman offers the feature of generating API documentation, which is very useful. I believe this feature will greatly assist in our group project, allowing us to create API documentation in a more structured and organized manner.
 
 #### Reflection Publisher-3
