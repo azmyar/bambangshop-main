@@ -48,15 +48,15 @@ You can install Postman via this website: https://www.postman.com/downloads/
     (You might want to use `cargo check` if you only need to verify your work without running the app.)
 
 ## Mandatory Checklists (Publisher)
--   [ ] Clone https://gitlab.com/ichlaffterlalu/bambangshop to a new repository.
+-   [x] Clone https://gitlab.com/ichlaffterlalu/bambangshop to a new repository.
 -   **STAGE 1: Implement models and repositories**
-    -   [ ] Commit: `Create Subscriber model struct.`
-    -   [ ] Commit: `Create Notification model struct.`
-    -   [ ] Commit: `Create Subscriber database and Subscriber repository struct skeleton.`
-    -   [ ] Commit: `Implement add function in Subscriber repository.`
-    -   [ ] Commit: `Implement list_all function in Subscriber repository.`
-    -   [ ] Commit: `Implement delete function in Subscriber repository.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-1" questions in this README.
+    -   [x] Commit: `Create Subscriber model struct.`
+    -   [x] Commit: `Create Notification model struct.`
+    -   [x] Commit: `Create Subscriber database and Subscriber repository struct skeleton.`
+    -   [x] Commit: `Implement add function in Subscriber repository.`
+    -   [x] Commit: `Implement list_all function in Subscriber repository.`
+    -   [x] Commit: `Implement delete function in Subscriber repository.`
+    -   [x] Write answers of your learning module's "Reflection Publisher-1" questions in this README.
 -   **STAGE 2: Implement services and controllers**
     -   [ ] Commit: `Create Notification service struct skeleton.`
     -   [ ] Commit: `Implement subscribe function in Notification service.`
@@ -77,6 +77,12 @@ This is the place for you to write reflections:
 ### Mandatory (Publisher) Reflections
 
 #### Reflection Publisher-1
+
+1. In the Observer pattern, implementing Subscriber as an interface aims to reduce the dependency of Publisher on concrete Subscriber classes. This allows for creating alternative implementations without disrupting existing code. Although using a Single Model Struct might suffice in the case of BambangShop, using Subscriber as an interface remains a better choice as it enhances program flexibility and ease of maintenance.
+
+2. While using a Vec to store ids for Product and URLs for Subscriber can be done and might suffice, searching based on keys (id and URL) would have higher complexity (O(N)). As a recommended alternative, using DashMap would speed up the search process with a complexity of O(1), thus improving program efficiency.
+
+3. In this context, using DashMap allows operations on the static variable SUBSCRIBERS to be safely performed by multiple threads concurrently. Conversely, while the Singleton Pattern is useful, it doesn't guarantee thread safety, especially in concurrent situations. Therefore, opting for DashMap in this case provides a more secure option for thread safety.
 
 #### Reflection Publisher-2
 
